@@ -5,6 +5,7 @@ import { Feather } from '@expo/vector-icons'
 import TabNavigation from './tabs.routes'
 import StackNavigation from './stack.routes'
 import { RootStackParamsList } from '../types/navigation'
+import NewPost from '../screens/NewPost'
 
 const DrawerNavigator = createDrawerNavigator<RootStackParamsList>()
 
@@ -14,7 +15,10 @@ export default function DrawerNavigation() {
       <DrawerNavigator.Screen name='Home' component={TabNavigation} options={{
         drawerIcon: ({ color, size }) => <Feather name='home' size={size} color={color} />
       }} />
-      <DrawerNavigator.Screen name='Profile' initialParams={{ userId: '1234' }} component={Profile} options={{
+      <DrawerNavigator.Screen name='Profile' initialParams={{ userId: '772' }} component={Profile} options={{
+        drawerIcon: ({ color, size }) => <Feather name='user' size={size} color={color} />
+      }} />
+      <DrawerNavigator.Screen name='New' initialParams={{ userId: '772' }} component={NewPost} options={{
         drawerIcon: ({ color, size }) => <Feather name='user' size={size} color={color} />
       }} />
     </DrawerNavigator.Navigator>
